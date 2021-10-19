@@ -45,7 +45,7 @@ public class ServicioEditorial {
 		}
 	}
 	@Transactional
-	public void ModificarEditorial(String id, String nombre) throws ErrorServicio {
+	public void modificarEditorial(String id, String nombre) throws ErrorServicio {
 		validarNombre(nombre);
 		
 		Optional<Editorial> respuesta = editorialRepositorio.findById(id);
@@ -59,7 +59,7 @@ public class ServicioEditorial {
 		}
 	}
 	@Transactional
-	public void DesabilitarEditorial(String id) throws ErrorServicio {
+	public void deshabilitarEditorial(String id) throws ErrorServicio {
 		Optional<Editorial> respuesta = editorialRepositorio.findById(id);
 		if(respuesta.isPresent()) {
 			editorial = respuesta.get();
@@ -71,7 +71,7 @@ public class ServicioEditorial {
 		}
 	}
 	@Transactional
-	public void HabilitarEditorial(String id) throws ErrorServicio {
+	public void habilitarEditorial(String id) throws ErrorServicio {
 		Optional<Editorial> respuesta = editorialRepositorio.findById(id);
 		if(respuesta.isPresent()) {
 			editorial = respuesta.get();
