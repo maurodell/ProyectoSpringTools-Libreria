@@ -90,6 +90,7 @@ public class ServicioLibro {
 		if(respuesta.isPresent()) {
 			Libro libro = respuesta.get();
 			libro.setAlta(false);
+			repositorioLibro.save(libro);
 		}else {
 			throw new ErrorServicio("Id no encontradó");
 		}
@@ -100,6 +101,7 @@ public class ServicioLibro {
 		if(respuesta.isPresent()) {
 			Libro libro = respuesta.get();
 			libro.setAlta(true);
+			repositorioLibro.save(libro);
 		}else {
 			throw new ErrorServicio("Id no encontradó");
 		}
